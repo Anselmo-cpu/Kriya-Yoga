@@ -349,14 +349,109 @@ main {
 }
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE MEJORADO
 ========================================================= */
+@media (max-width: 1024px) {
+  /* Padding más cómodo en pantallas medianas */
+  .payment-main {
+    padding: 3rem 4%;
+  }
+
+  .payment-card {
+    padding: 2.8rem 2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Header: ocultamos nav, como ya tenías */
   .main-header nav {
     display: none;
   }
 
-  .content-section {
-    padding: 4rem 8%;
+  /* Ajuste del main y tarjeta */
+  .payment-main {
+    padding: 2rem 4%;
   }
+
+  .payment-card {
+    padding: 2.2rem 1.8rem;
+  }
+
+  /* Información de pago: apilado vertical */
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Ajuste de títulos y párrafos dentro de la tarjeta */
+  .payment-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .payment-card p {
+    font-size: 0.95rem;
+  }
+
+  .payment-box h3 {
+    font-size: 1.15rem;
+  }
+
+  .payment-box p,
+  .payment-box a {
+    font-size: 0.9rem;
+  }
+
+  /* Botones full width para tocar con el dedo */
+  .payment-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero y secciones generales */
+  .hero {
+    padding: 3rem 4%;
+  }
+
+  .content-section {
+    padding: 4rem 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tarjeta y main aún más compactos en móviles pequeños */
+  .payment-main {
+    padding: 1.5rem 3%;
+  }
+
+  .payment-card {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .payment-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .payment-card p,
+  .payment-box p,
+  .payment-box a {
+    font-size: 0.85rem;
+  }
+
+  .payment-box h3 {
+    font-size: 1.05rem;
+  }
+
+  .cta-button,
+  .payment-actions a {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+/* ================= QR / Imagenes dentro de boxes ================= */
+.payment-box img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
