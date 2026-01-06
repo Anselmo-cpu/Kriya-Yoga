@@ -210,6 +210,131 @@ main {
 }
 
 /* =========================================================
+   PAGO – ESTILOS INTEGRADOS CON EL CSS PRINCIPAL
+========================================================= */
+
+/* Centrar todo el main y dar padding consistente */
+.payment-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px - 70px); /* header + footer aproximados */
+  padding: 4rem 6%;
+  animation: fadeUp 1.1s ease both;
+}
+
+/* Tarjeta de pago centrada y elegante */
+.payment-card {
+  background-color: var(--bg-main);
+  border-radius: 14px;
+  padding: 3rem 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  animation: fadeUp 1.2s ease both;
+}
+
+/* Títulos dentro de la tarjeta */
+.payment-card h1 {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Párrafos */
+.payment-card p {
+  margin-bottom: 1.8rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Contenedores de información */
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+/* Cada box de contacto */
+.payment-box {
+  background-color: rgba(142,124,195,0.05); /* ligero tono primary */
+  padding: 1.5rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.payment-box:hover {
+  transform: translateY(-2px);
+}
+
+.payment-box h3 {
+  font-family: var(--title-font);
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.payment-box a {
+  text-decoration: none;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+.payment-box a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Botón de acción: Volver al inicio */
+.payment-actions {
+  margin-top: 2rem;
+}
+
+.payment-actions a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-light);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-actions a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Footer ya está integrado, solo aseguramos el padding */
+.main-footer {
+  padding: 3.5rem 6%;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .payment-main {
+    padding: 2rem 6%;
+  }
+
+  .payment-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .payment-info {
+    gap: 1rem;
+  }
+}
+
+
+
+/* =========================================================
    ANIMACIÓN
 ========================================================= */
 @keyframes fadeUp {
