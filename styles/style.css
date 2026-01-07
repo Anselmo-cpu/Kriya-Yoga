@@ -365,3 +365,20 @@ main {
   }
 
 }
+
+/* =========================================================
+   TEXTO EDITORIAL – ABOUT / YANTRA / TANTRA
+========================================================= */
+
+.text-block {
+  max-width: 760px; /* CLAVE: evita líneas demasiado largas */
+  margin: 0 auto;
+  text-align: left; /* más editorial */
+}
+
+.text-block p {
+  margin-bottom: 1.6rem;
+  line-height: 1.85;
+  font-size: 1rem;
+  text-wrap: pretty; /* evita palabras colgando (soporte moderno) */
+}
