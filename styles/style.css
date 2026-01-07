@@ -21,7 +21,7 @@
 }
 
 /* =========================================================
-   RESET & BASE
+   RESET & BASE GLOBAL
 ========================================================= */
 *,
 *::before,
@@ -31,16 +31,26 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
   font-family: var(--body-font);
   background-color: var(--bg-main);
   color: var(--text-dark);
   line-height: 1.6;
 }
 
-main { padding-top: 80px; }
+main {
+  flex: 1;
+  padding-top: 80px; /* header fijo */
+}
 
 /* =========================================================
    HEADER
@@ -51,6 +61,7 @@ main { padding-top: 80px; }
   width: 100%;
   height: 80px;
   padding: 0 6%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +72,9 @@ main { padding-top: 80px; }
   z-index: 1000;
 }
 
-.logo { height: 60px; }
+.logo {
+  height: 60px;
+}
 
 .main-header nav a {
   margin-left: 1.8rem;
@@ -76,10 +89,12 @@ main { padding-top: 80px; }
 .hero {
   position: relative;
   min-height: 85vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   padding: 4rem 6%;
   color: var(--text-light);
 
@@ -92,27 +107,23 @@ main { padding-top: 80px; }
 }
 
 /* brillo espiritual */
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 
-    background-image: url("../img/hero-image.png");
-    background-size: cover;
-    background-position: center;
+  background-image: url("../img/hero-image.png");
+  background-size: cover;
+  background-position: center;
 
-    filter:
-      brightness(1.55)
-      saturate(1.45)
-      contrast(1.05);
+  filter: brightness(1.55) saturate(1.45) contrast(1.05);
+  mix-blend-mode: screen;
+  opacity: 0.45;
 
-    mix-blend-mode: screen;
-    opacity: 0.45;
+  pointer-events: none;
+}
 
-    pointer-events: none;
-  }
-
-  .hero::before {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -128,8 +139,6 @@ main { padding-top: 80px; }
   pointer-events: none;
 }
 
-
-
 .hero-content {
   max-width: 800px;
   position: relative;
@@ -143,7 +152,9 @@ main { padding-top: 80px; }
   margin-bottom: 1.5rem;
 }
 
-.hero p { margin-bottom: 2.5rem; }
+.hero p {
+  margin-bottom: 2.5rem;
+}
 
 /* =========================================================
    BOTONES – ENERGÍA VIVA
@@ -151,13 +162,17 @@ main { padding-top: 80px; }
 .cta-button {
   position: relative;
   display: inline-block;
+
   padding: 0.8rem 2.2rem;
   border-radius: 30px;
+
   text-decoration: none;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--text-light);
+
   font-size: 0.9rem;
   letter-spacing: 1px;
+
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -171,20 +186,24 @@ main { padding-top: 80px; }
   content: "";
   position: absolute;
   inset: 0;
+
   background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-.cta-button:hover::after { opacity: 1; }
+.cta-button:hover::after {
+  opacity: 1;
+}
 
 /* =========================================================
    SECCIONES GENERALES
 ========================================================= */
 .content-section {
-  padding: 6rem 6%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 6rem 6%;
+
   text-align: center;
   animation: fadeUp 1.1s ease both;
 }
@@ -223,19 +242,22 @@ main { padding-top: 80px; }
 
 .classes-container {
   margin-top: 3rem;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2.5rem;
 }
 
 .class-card {
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+
   background: linear-gradient(
     180deg,
     rgba(255,255,255,0.08),
     rgba(255,255,255,0.02)
   );
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   animation: fadeUp 1.2s ease both;
 }
@@ -246,7 +268,9 @@ main { padding-top: 80px; }
   color: var(--secondary);
 }
 
-.class-card p { opacity: 0.92; }
+.class-card p {
+  opacity: 0.92;
+}
 
 /* =========================================================
    FOOTER
@@ -267,8 +291,14 @@ main { padding-top: 80px; }
    ANIMACIONES
 ========================================================= */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes kundaliniGlow {
@@ -280,9 +310,17 @@ main { padding-top: 80px; }
    RESPONSIVE
 ========================================================= */
 @media (max-width: 768px) {
-  .main-header nav { display: none; }
-  .hero { padding: 3rem 4%; }
-  .content-section { padding: 4rem 6%; }
+  .main-header nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 3rem 4%;
+  }
+
+  .content-section {
+    padding: 4rem 6%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -292,4 +330,87 @@ main { padding-top: 80px; }
   }
 }
 
+/* =========================================================
+   PÁGINAS DE PAGO (medios.html / pago.html)
+========================================================= */
 
+.payment-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 6% 4rem;
+}
+
+.payment-card {
+  width: 100%;
+  max-width: 900px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.95)
+  );
+
+  border-radius: 20px;
+  padding: 3rem 3rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+
+  animation: fadeUp 1.1s ease both;
+}
+
+.payment-card h1 {
+  font-family: var(--title-font);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.payment-card p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* INFO BLOQUES */
+.payment-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.payment-box {
+  background: rgba(142,124,195,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.payment-box h3 {
+  font-family: var(--title-font);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+}
+
+.payment-box p {
+  font-size: 0.9rem;
+}
+
+/* ACCIONES */
+.payment-actions {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.payment-actions a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.crypto-address {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
