@@ -317,3 +317,51 @@ main {
   .hero { padding: 3rem 4%; }
   .content-section { padding: 4rem 6%; }
 }
+
+
+/* =========================================================
+   FIX RESPONSIVE – PAGOS / MEDIOS
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .payment-main {
+    padding: 4rem 4%;
+    align-items: center;
+  }
+
+  .payment-card {
+    padding: 2.2rem 1.8rem;
+    border-radius: 16px;
+  }
+
+  .payment-card h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .payment-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .payment-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .payment-box {
+    padding: 1.6rem;
+  }
+
+  .crypto-address {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .payment-actions {
+    margin-top: 2rem;
+  }
+
+}
