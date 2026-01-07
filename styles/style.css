@@ -85,7 +85,7 @@ main {
 }
 
 /* =========================================================
-   HERO – ENERGÍA KUNDALINI
+   HERO – ENERGÍA KUNDALINI (AJUSTADO)
 ========================================================= */
 .hero {
   position: relative;
@@ -135,6 +135,7 @@ main {
 
 .hero-content {
   max-width: 800px;
+  padding-top: 1rem;          /* NUEVO – aire general */
   position: relative;
   z-index: 2;
   animation: fadeUp 1.3s ease forwards;
@@ -143,17 +144,23 @@ main {
 .hero h1 {
   font-family: var(--title-font);
   font-size: clamp(2.4rem, 5vw, 3.6rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;      /* AJUSTADO */
 }
 
-.hero p { margin-bottom: 2.5rem; }
+.hero p {
+  max-width: 620px;           /* NUEVO – mejor lectura */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.6rem;     /* MÁS AIRE ENTRE TEXTO Y BOTÓN */
+}
 
 /* =========================================================
-   BOTONES – FUEGO SAGRADO
+   BOTONES – FUEGO SAGRADO (AJUSTADO)
 ========================================================= */
 .cta-button {
   position: relative;
   display: inline-block;
+  margin-top: 0.4rem;         /* NUEVO – separación visual */
   padding: 0.85rem 2.3rem;
   border-radius: 30px;
   text-decoration: none;
@@ -170,6 +177,7 @@ main {
   transform: translateY(-2px);
   box-shadow: 0 15px 40px rgba(255,112,67,0.55);
 }
+
 
 /* =========================================================
    SECCIONES GENERALES
@@ -391,4 +399,16 @@ main {
 
 .about-group p:last-child {
   margin-bottom: 0;
+}
+
+.text-block p {
+  margin-bottom: 1.9rem;
+  line-height: 1.85;
+  max-width: 760px;
+}
+
+.about-highlight {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
 }
