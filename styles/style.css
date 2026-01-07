@@ -382,3 +382,13 @@ main {
   font-size: 1rem;
   text-wrap: pretty; /* evita palabras colgando (soporte moderno) */
 }
+
+.about-group {
+  margin-bottom: 2.4rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid rgba(142,124,195,0.25);
+}
+
+.about-group p:last-child {
+  margin-bottom: 0;
+}
