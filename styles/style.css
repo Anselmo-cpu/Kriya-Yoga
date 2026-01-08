@@ -272,6 +272,12 @@ main {
   box-shadow: none;
 }
 
+.payment-card h1,
+.payment-card > p {
+  text-align: center;
+}
+
+
 
 .payment-box {
   background: rgba(255,183,77,0.15);
@@ -284,6 +290,20 @@ main {
   font-size: 1.4rem;
   color: var(--primary);
 }
+
+.payment-info {
+  display: flex;
+  justify-content: center;
+  gap: 4rem; /* antes seguro era 2rem o menos */
+  margin: 3rem 0;
+}
+
+.payment-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
 
 /* BOTONES CONTACTO */
 .contact-button {
@@ -623,4 +643,30 @@ main {
   #info-clases .class-card h3 {
     font-size: 1.4rem;
   }
+}
+
+
+.instagram-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 1.6rem;
+  border-radius: 30px;
+
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  background: var(--accent-gradient);
+  color: var(--text-light);
+
+  transition: all 0.3s ease;
+}
+
+.instagram-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255,112,67,0.45);
+  color: var(--text-light);
 }
