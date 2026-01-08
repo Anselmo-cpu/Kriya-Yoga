@@ -779,3 +779,11 @@ main {
   }
 
 }
+
+
+/* ===== FIX CONTRASTE TEXTO INSTAGRAM FOOTER ===== */
+
+.main-footer .instagram-btn {
+  color: #1a0f0a !important; /* negro bien visible */
+  font-weight: 600;
+}
