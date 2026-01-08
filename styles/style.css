@@ -670,3 +670,112 @@ main {
   box-shadow: 0 12px 30px rgba(255,112,67,0.45);
   color: var(--text-light);
 }
+
+
+/* ================= MEDIO.HTML RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .payment-main {
+    padding: 2rem 1rem;
+  }
+
+  .payment-card {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .payment-card h1,
+  .payment-card > p {
+    text-align: center;
+  }
+
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .payment-box {
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+  }
+
+  .payment-box h3,
+  .payment-box p {
+    text-align: center;
+  }
+
+  .payment-box a.cta-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .crypto-address {
+    word-break: break-all;
+    display: block;
+  }
+
+  .payment-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  .payment-actions .cta-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}
+
+
+/* ================= PAGO.HTML RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .payment-main {
+    padding: 2.5rem 1rem;
+  }
+
+  .payment-card {
+    width: 100%;
+    padding: 2.2rem 1.5rem;
+  }
+
+  .payment-card h1,
+  .payment-card > p {
+    text-align: center;
+  }
+
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .payment-box {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .payment-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .payment-actions .cta-button {
+    width: 100%;
+    max-width: 260px;
+  }
+
+}
