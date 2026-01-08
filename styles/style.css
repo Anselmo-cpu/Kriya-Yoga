@@ -264,11 +264,12 @@ main {
 
 .payment-card {
   max-width: 900px;
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 3rem;
-  box-shadow: 0 25px 60px rgba(62,39,35,0.18);
+  background: transparent;
+  border-radius: 0;
+  padding: 3rem 0;
+  box-shadow: none;
 }
+
 
 .payment-box {
   background: rgba(255,183,77,0.15);
@@ -412,3 +413,105 @@ main {
   font-weight: 500;
   margin-bottom: 2.4rem;
 }
+
+
+/* =========================================================
+   AJUSTE FINAL – NUESTRAS PRÁCTICAS (MATCH CLIENTE)
+========================================================= */
+
+.class-card {
+  position: relative;
+  padding: 2.8rem 2.2rem;
+  border-radius: 20px;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255,183,77,0.18),
+    rgba(0,0,0,0.18)
+  );
+
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.38);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover espiritual (brillo leve) */
+.class-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 28px rgba(255,112,67,0.35),
+    0 18px 45px rgba(0,0,0,0.45);
+}
+
+/* TÍTULO PRINCIPAL */
+.class-card h3 {
+  font-family: var(--title-font);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-soft);
+  margin-bottom: 0.4rem;
+}
+
+/* SUBTÍTULO */
+.class-card h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+}
+
+/* TEXTO DESCRIPTIVO */
+.class-card p {
+  color: rgba(250, 246, 240, 0.82); /* gris claro, no blanco */
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   NAV HEADER – ANIMACIÓN SUTIL FUEGO
+========================================================= */
+
+.main-header nav a {
+  position: relative;
+  margin-left: 1.8rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* línea animada inferior */
+.main-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+/* hover */
+.main-header nav a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.main-header nav a:hover::after {
+  width: 100%;
+}
+
+.payment-box p {
+  margin-bottom: 1.4rem;
+}
+
