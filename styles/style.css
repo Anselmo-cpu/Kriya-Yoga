@@ -4,8 +4,9 @@
 :root {
   /* FONDOS */
   --bg-main: #FAF6F0;
-  --bg-classes: #2A1B17;
-  --bg-footer: #1C120F;
+  --bg-classes: #3A2621;   /* antes #2A1B17 */
+  --bg-footer:  #2B1B17;   /* antes #1C120F */
+
 
   /* TIERRA */
   --primary: #6D4C41;
@@ -23,6 +24,7 @@
   /* TIPOGRAFÍA */
   --title-font: 'Cormorant Garamond', serif;
   --body-font: 'Montserrat', sans-serif;
+
 }
 
 /* =========================================================
@@ -515,3 +517,110 @@ main {
   margin-bottom: 1.4rem;
 }
 
+
+/* =========================================================
+   AJUSTE VISUAL – NUESTRAS PRÁCTICAS (MATCH REFERENCIA)
+========================================================= */
+
+/* Título de sección */
+#info-clases h2 {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Intro */
+#info-clases .intro-text {
+  color: rgba(250,246,240,0.75);
+}
+
+/* Tarjetas */
+#info-clases .class-card {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,183,77,0.14),
+      rgba(0,0,0,0.25)
+    ),
+    linear-gradient(
+      180deg,
+      var(--bg-classes-soft),
+      var(--bg-classes)
+    );
+
+
+  border-radius: 22px;
+  padding: 3rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Borde superior naranja */
+#info-clases .class-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+}
+
+/* Hover glow */
+#info-clases .class-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.6),
+    0 0 30px rgba(255,112,67,0.25);
+}
+
+/* Títulos principales */
+#info-clases .class-card h3 {
+  font-family: var(--title-font);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+/* Subtítulos */
+#info-clases .class-card h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-soft);
+  margin-bottom: 1.4rem;
+}
+
+/* Texto */
+#info-clases .class-card p {
+  color: rgba(250,246,240,0.78);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+}
+
+#info-clases .class-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   RESPONSIVE – TARJETAS
+========================================================= */
+
+@media (max-width: 768px) {
+  #info-clases .class-card {
+    padding: 2.4rem 2rem;
+  }
+
+  #info-clases .class-card h3 {
+    font-size: 1.4rem;
+  }
+}
