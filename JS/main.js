@@ -22,3 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScrollAnimation();
   window.addEventListener("scroll", handleScrollAnimation);
 });
+
+
+
+
+
