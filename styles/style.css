@@ -68,7 +68,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background-color: rgba(250,246,240,0.95);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px rgba(62,39,35,0.08);
@@ -294,7 +293,6 @@ main {
   text-decoration: none;
 }
 
-/* Instagram botón */
 .instagram-btn {
   display: inline-flex;
   align-items: center;
@@ -308,7 +306,6 @@ main {
   transition: all 0.3s ease;
 }
 
-/* FIX CONTRASTE */
 .main-footer .instagram-btn {
   color: #1a0f0a !important;
 }
@@ -360,21 +357,117 @@ main {
 }
 
 /* =========================================================
-   RESPONSIVE GLOBAL
+   HAMBURGUESA MOBILE – TRANSPARENTE & NARANJA
+========================================================= */
+.hamburger {
+  display: none; /* solo mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MENU MÓVIL */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  height: 30vh; /* menos espacio en mobile */
+  background-color: rgba(250,246,240,0.95);
+  backdrop-filter: blur(8px);
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.8rem;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  color: var(--text-dark);
+}
+
+/* =========================================================
+   CRIPTOMONEDAS – DIRECCIÓN RESPONSIVE
+========================================================= */
+.crypto-address {
+  display: inline-block;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  font-family: monospace;
+  color: var(--text-dark);
+  background: rgba(255,183,77,0.15);
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   RESPONSIVE GENERAL
 ========================================================= */
 @media (max-width: 768px) {
+  /* HEADER */
   .main-header nav { display: none; }
+  .hamburger { display: flex; }
+
+  /* HERO */
   .hero { padding: 3rem 4%; }
+
+  /* CONTENT SECTION */
   .content-section { padding: 4rem 6%; }
 
-  .payment-info {
+  /* PAGO / MEDIOS */
+  .payment-main {
     flex-direction: column;
-    gap: 2.5rem;
+    padding: 4rem 4% 2rem;
   }
 
   .payment-card {
     width: 100%;
-    padding: 2.2rem 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .payment-info {
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .payment-actions .cta-button {
@@ -383,29 +476,361 @@ main {
   }
 }
 
+
+/* =================== RESPONSIVE GLOBAL =================== */
+@media (max-width: 1024px) {
+  /* HEADER */
+  .main-header {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HEADER */
+  .main-header nav { display: none; }
+  .hamburger { display: flex; }
+
+  /* HERO */
+  .hero {
+    padding: 3rem 4%;
+  }
+
+  /* SECCIONES GENERALES */
+  .content-section {
+    padding: 4rem 4%;
+  }
+
+  /* CLASES / PRÁCTICAS */
+  .classes-container {
+    grid-template-columns: 1fr; /* Cada clase ocupa toda la fila */
+    gap: 2rem;
+  }
+
+  /* PAGO / MEDIOS */
+  .payment-main {
+    flex-direction: column;
+    padding: 4rem 4% 2rem;
+  }
+
+  .payment-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem 1.5rem;
+  }
+
+  .payment-info {
+    flex-direction: column; /* Apila cajas verticalmente */
+    gap: 1.8rem;
+    align-items: stretch;   /* Que ocupen todo el ancho */
+  }
+
+  .payment-box {
+    flex: 1 1 100%; /* Cada caja ocupa todo el ancho disponible */
+  }
+
+  .payment-actions .cta-button {
+    max-width: 280px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* BOTONES */
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* CONTENT SECTION */
+  .content-section h2 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+  }
+}
+
+
+
+
 /* =========================================================
-   FIX GENERAL – NO PISAR ANIMACIONES DE SCROLL
+   RESPONSIVE DEFINITIVO PARA MEDIOS Y PAGO
 ========================================================= */
+@media (max-width: 768px) {
 
-/* Evita que se dispare una animación automática */
-#about,
-#about * {
-  animation: none !important;
+  /* Contenedor principal */
+  .payment-main {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 2rem 4% !important;
+  }
+
+  /* Tarjeta principal */
+  .payment-card {
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 2rem 1rem !important;
+    box-sizing: border-box;
+  }
+
+  /* Contenedor de cajas de pago */
+  .payment-info {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    margin: 2rem 0 !important;
+  }
+
+  /* Cada caja de pago */
+  .payment-box {
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box;
+    flex: none !important;
+    text-align: center !important;
+  }
+
+  /* QR / Imágenes dentro de cajas */
+  .payment-box img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1rem auto 0 !important;
+  }
+
+  /* Dirección cripto */
+  .crypto-address {
+    font-size: 0.85rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    display: block !important;
+    margin: 0.5rem auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Botones */
+  .cta-button,
+  .contact-button {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 1rem auto 0 !important;
+    text-align: center !important;
+    display: block !important;
+  }
 }
+
+
 
 /* =========================================================
-   ANIMACIÓN SCROLL – TEXTO "QUÉ ES EL TANTRA YOGA"
+   RESPONSIVE FINAL PARA MEDIOS Y PAGO – CORRECTIVO
 ========================================================= */
+@media (max-width: 768px) {
+  /* Contenedor principal de pago/medio */
+  .payment-main {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2% !important;
+  }
 
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  will-change: opacity, transform;
+  /* Tarjeta principal */
+  .payment-card {
+    width: 100%;
+    max-width: 360px; /* Ajuste final para móviles */
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Contenedor de cajas */
+  .payment-info {
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+
+  /* Cada caja individual */
+  .payment-box {
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 0.8rem;
+    text-align: center;
+    flex: none;
+  }
+
+  /* QR / imágenes dentro de las cajas */
+  .payment-box img {
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    margin: 0.5rem auto 0;
+    display: block;
+  }
+
+  /* Dirección de criptomonedas */
+  .crypto-address {
+    font-size: 0.8rem;
+    display: block;
+    margin: 0.3rem auto;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Botones */
+  .cta-button,
+  .contact-button {
+    width: 100%;
+    max-width: 240px;
+    margin: 0.8rem auto 0;
+    text-align: center;
+    display: block;
+  }
 }
 
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Ajuste extra para pantallas muy pequeñas (celulares < 480px) */
+@media (max-width: 480px) {
+  .payment-card {
+    max-width: 300px;
+    padding: 1rem 0.6rem;
+  }
+
+  .payment-box {
+    max-width: 280px;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .payment-box img {
+    max-width: 80px;
+  }
+
+  .crypto-address {
+    font-size: 0.75rem;
+  }
+
+  .cta-button,
+  .contact-button {
+    max-width: 220px;
+    font-size: 0.8rem;
+  }
 }
 
+
+/* =========================================================
+   FIX RESPONSIVE PAGO & MEDIO – FINAL
+========================================================= */
+@media (max-width: 768px) {
+
+  /* Contenedor principal de pago/medio */
+  .payment-main {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 4% !important;
+    min-height: calc(100vh - 80px); /* altura completa menos header */
+    box-sizing: border-box;
+  }
+
+  /* Tarjeta principal */
+  .payment-card {
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 1.5rem 1rem !important;
+    flex: 1; /* ocupa todo el espacio disponible */
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* Contenedor de cajas de pago */
+  .payment-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Cada caja individual */
+  .payment-box {
+    width: 100% !important;
+    max-width: 320px !important;
+    padding: 1rem 0.8rem !important;
+    text-align: center !important;
+    flex: none !important;
+  }
+
+  /* QR / imágenes dentro de las cajas */
+  .payment-box img {
+    width: auto !important;
+    max-width: 100px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0.5rem auto 0 !important;
+  }
+
+  /* Dirección de criptomonedas */
+  .crypto-address {
+    display: block !important;
+    font-size: 0.8rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    margin: 0.3rem auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Botones */
+  .cta-button,
+  .contact-button {
+    width: 100% !important;
+    max-width: 240px !important;
+    margin: 0.8rem auto 0 !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* Footer siempre visible al final */
+  .main-footer {
+    margin-top: auto !important;
+  }
+}
+
+/* Ajustes extra para pantallas muy pequeñas < 480px */
+@media (max-width: 480px) {
+  .payment-card {
+    max-width: 300px !important;
+    padding: 1rem 0.6rem !important;
+  }
+
+  .payment-box {
+    max-width: 280px !important;
+    padding: 0.8rem 0.6rem !important;
+  }
+
+  .payment-box img {
+    max-width: 80px !important;
+  }
+
+  .crypto-address {
+    font-size: 0.75rem !important;
+  }
+
+  .cta-button,
+  .contact-button {
+    max-width: 220px !important;
+    font-size: 0.8rem !important;
+  }
+}
