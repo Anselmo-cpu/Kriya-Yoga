@@ -408,3 +408,67 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ================= BOTONES SOLO PARA PAGO.HTML ================= */
+.payment-main .contact-button {
+    display: block;             /* que cada botón ocupe su fila */
+    width: 100%;                /* full width del contenedor */
+    max-width: 400px;           /* no demasiado ancho en desktop */
+    margin: 0.5rem auto;        /* centrado */
+    padding: 1rem 1.5rem;       /* tamaño cómodo */
+    background: linear-gradient(145deg, #FFB74D, #FF7043); /* degradado */
+    color: #4E342E;             /* color del texto */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;      /* quita subrayado */
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-main .contact-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 112, 67, 0.6);
+}
+
+/* Botón de volver al inicio */
+.payment-main .cta-button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto 0;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(145deg, #FFB74D, #FF7043);
+    color: #4E342E;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-main .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 112, 67, 0.6);
+}
+
+
+/* ================= CRIPTOMONEDAS ================= */
+.payment-box .crypto-address {
+    display: block;             /* que ocupe su propia línea */
+    word-break: break-all;      /* rompe la dirección si es muy larga */
+    overflow-wrap: break-word;  /* seguridad extra para word wrap */
+    background-color: #f5f5f5;  /* fondo clarito para resaltar */
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
